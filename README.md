@@ -1,7 +1,8 @@
-# Requirements
-- Ruby 2.6.3
+# TDD Challene
+## Requirements
+- Ruby 2.7.2
 
-# Sample
+## Sample
 
 ```
 $ cd 0_sample
@@ -18,3 +19,4 @@ Finished in 0.001042s, 1919.3858 runs/s, 1919.3858 assertions/s.
 ```
 
 OK!!!!!!!!!!!!
+
