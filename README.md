@@ -20,3 +20,9 @@ Finished in 0.001042s, 1919.3858 runs/s, 1919.3858 assertions/s.
 
 OK!!!!!!!!!!!!
 
+## For Docker
+
+single test
+```
+$ docker-compose run --rm tdd ruby 0_sample/test/sample_test.rb
+```
