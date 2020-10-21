@@ -1,0 +1,9 @@
+version: '3'
+services:
+  tdd:
+    tty: true
+    stdin_open: true
+    working_dir: /src/tdd_challenge
+    image: ruby:2.7.2
+    volumes:
+      - .:/src/tdd_challenge
