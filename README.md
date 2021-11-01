@@ -1,6 +1,6 @@
 # TDD Challenge
 ## Requirements
-- Ruby 2.7.2
+- Ruby 3.0.2
 
 ## Sample
 
