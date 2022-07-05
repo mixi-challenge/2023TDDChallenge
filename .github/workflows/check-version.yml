@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Check ruby version in docker-compose.yml
+      - name: Check ruby version in docker-compose.yaml
         run: |
-          grep "image: $(cat .ruby-version)" docker-compose.yml
+          grep "image: $(cat .ruby-version)" docker-compose.yaml
       - name: Check ruby version in README.md
         run: |
           grep "Ruby $(cat .ruby-version)" README.md
