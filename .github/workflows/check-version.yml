@@ -1,0 +1,21 @@
+name: Check version
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  # 全てのファイルのRubyのバージョンが一致しているかを.ruby-version基準で確認する
+  check-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check ruby version in docker-compose.yml
+        run: |
+          grep "image: $(cat .ruby-version)" docker-compose.yml
+      - name: Check ruby version in README.md
+        run: |
+          grep "Ruby $(cat .ruby-version)" README.md
