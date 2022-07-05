@@ -17,5 +17,4 @@ jobs:
         run: |
           grep "image: ruby:$(cat .ruby-version)" docker-compose.yaml
       - name: Check ruby version in README.md
-        run: |
-          grep "Ruby $(cat .ruby-version)" README.md
+        run: grep "Ruby $(cat .ruby-version)" README.md
