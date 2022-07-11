@@ -1,6 +1,7 @@
 # TDD Challenge
 ## Requirements
-- Ruby 3.0.2
+- Ruby 3.1.2
+- Docker Compose V2 (optional)
 
 ## Sample
 
@@ -37,10 +38,10 @@ Finished in 0.014283s, 2310.4390 runs/s, 2940.5587 assertions/s.
 ## For Docker
 all tests
 ```
-$ docker-compose run --rm tdd rake test
+$ docker compose run --rm tdd rake test
 ```
 
 single test
 ```
-$ docker-compose run --rm tdd ruby 0_sample/test/sample_test.rb
+$ docker compose run --rm tdd ruby 0_sample/test/sample_test.rb
 ```

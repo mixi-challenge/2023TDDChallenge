@@ -4,6 +4,6 @@ services:
     tty: true
     stdin_open: true
     working_dir: /src/tdd_challenge
-    image: ruby:3.0.2
+    image: ruby:3.1.2
     volumes:
       - .:/src/tdd_challenge
