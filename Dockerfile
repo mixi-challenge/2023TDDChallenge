@@ -10,6 +10,7 @@ WORKDIR /src/tdd_challenge
 RUN useradd -m --shell /bin/bash --uid 1000 ruby
 USER ruby
 
-RUN gem install bundler -v 2.3.17
+RUN gem install bundler -v 2.3.17 && \
+  bundle config set path '/usr/local/bundle/vendor/gems'
 
 ENV EDITOR vim
