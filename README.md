@@ -36,6 +36,11 @@ Finished in 0.014283s, 2310.4390 runs/s, 2940.5587 assertions/s.
 ```
 
 ## For Docker
+bundle install
+```
+$ docker compose run --rm tdd bundle install
+```
+
 ### minitest
 all tests
 ```
