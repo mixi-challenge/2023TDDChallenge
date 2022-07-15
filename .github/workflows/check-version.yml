@@ -15,6 +15,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Check ruby version in docker-compose.yaml
         run: |
-          grep "image: ruby:$(cat .ruby-version)" docker-compose.yaml
+          grep "FROM ruby:$(cat .ruby-version)" Dockerfile
       - name: Check ruby version in README.md
         run: grep "Ruby $(cat .ruby-version)" README.md
