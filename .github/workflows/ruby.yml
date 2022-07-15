@@ -12,9 +12,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: bundle install
+      shell: bash
+      run:  |
+        docker compose -f docker-compose-ci.yaml up tdd -d
+        docker compose exec tdd bundle install
+    - name: Run Rubocop
+      shell: bash
+      run:  |
+        docker compose exec tdd bundle exec rubocop --parallel
     - name: Run tests
       shell: bash
       run:  |
-        docker compose run --rm tdd rake test
+        docker compose exec tdd rake test
       env:
         RACK_ENV: test
