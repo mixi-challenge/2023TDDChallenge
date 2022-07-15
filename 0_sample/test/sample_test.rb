@@ -1,5 +1,5 @@
-require 'minitest/autorun'
-require_relative '../lib/sample.rb'
+require "minitest/autorun"
+require_relative "../lib/sample"
 
 class SampleTest < Minitest::Test
   # 各テスト開始時に一度呼ばれる
