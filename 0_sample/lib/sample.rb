@@ -1,4 +1,3 @@
-
 class Sample
   def twice(number)
     number * 2
