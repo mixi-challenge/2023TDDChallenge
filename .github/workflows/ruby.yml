@@ -15,7 +15,7 @@ jobs:
     - name: bundle install
       shell: bash
       run:  |
-        docker compose -f docker-compose-ci.yaml up tdd -d
+        docker compose up tdd -d
         docker compose exec tdd bundle install
     - name: Run Rubocop
       shell: bash
