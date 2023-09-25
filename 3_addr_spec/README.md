@@ -28,7 +28,7 @@ ng
 採点を受けたい場合は、入力データを渡すので下のコマンドの実行結果をスタッフまで送ってください！
 
 ```console
-$ ruby validate_addr_spec.rb < email_address.list > result
+$ ruby validate_addr_spec.rb < input.txt > output.txt
 ```
 
 
