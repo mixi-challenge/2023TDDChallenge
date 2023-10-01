@@ -11,7 +11,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: bundle install
       shell: bash
       run:  |
@@ -21,9 +21,13 @@ jobs:
       shell: bash
       run:  |
         docker compose exec tdd bundle exec rubocop --parallel
-    - name: Run tests
+    - name: Run tests for minitest
       shell: bash
       run:  |
         docker compose exec tdd rake test
+    - name: Run tests for RSpec
+      shell: bash
+      run:  |
+        docker compose exec tdd bundle exec rspec
       env:
         RACK_ENV: test

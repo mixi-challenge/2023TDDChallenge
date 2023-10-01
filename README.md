@@ -1,6 +1,6 @@
 # TDD Challenge
 ## Requirements
-- Ruby 3.1.2
+- Ruby 3.2.2
 - Docker Compose V2 (optional)
 
 ## Sample

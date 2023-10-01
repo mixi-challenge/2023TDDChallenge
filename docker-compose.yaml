@@ -6,7 +6,9 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - .:/src/tdd_challenge
+      - type: bind
+        source: .
+        target: /src/tdd_challenge
       - bundle:/usr/local/bundle
       - /src/.git
 

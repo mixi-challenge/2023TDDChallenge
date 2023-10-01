@@ -11,6 +11,8 @@ inherit_from: .rubocop_todo.yml
 #
 # See https://docs.rubocop.org/rubocop/configuration
 
+require:
+  - rubocop-rspec
 
 AllCops:
   NewCops: enable
@@ -54,4 +56,7 @@ Metrics/MethodLength:
   Enabled: false
 
 Metrics/PerceivedComplexity:
+  Enabled: false
+
+RSpec/MultipleExpectations:
   Enabled: false
