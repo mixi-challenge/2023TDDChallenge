@@ -17,10 +17,6 @@ jobs:
       run:  |
         docker compose up tdd -d
         docker compose exec tdd bundle install
-    - name: Run Rubocop
-      shell: bash
-      run:  |
-        docker compose exec tdd bundle exec rubocop --parallel
     - name: Run tests for minitest
       shell: bash
       run:  |
@@ -31,3 +27,11 @@ jobs:
         docker compose exec tdd bundle exec rspec
       env:
         RACK_ENV: test
+    - name: Check input and output data
+      run: |
+        docker compose exec tdd ruby 2_era2/convert_era.rb < 2_era2/input.txt > 2_era2/output_.txt
+        diff -u 2_era2/output.txt 2_era2/output_.txt
+        docker compose exec tdd ruby 3_addr_spec/validate_addr_spec.rb < 3_addr_spec/input.txt > 3_addr_spec/output_.txt
+        diff -u 3_addr_spec/output.txt 3_addr_spec/output_.txt
+        docker compose exec tdd ruby 3_addr_spec/validate_addr_spec_advanced.rb < 3_addr_spec/input.txt > 3_addr_spec/output_advanced_.txt
+        diff -u 3_addr_spec/output_advanced.txt 3_addr_spec/output_advanced_.txt

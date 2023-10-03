@@ -1,0 +1,36 @@
+name: Rubocop
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      if: github.event.action != 'closed'
+      with:
+        fetch-depth: 0
+        ref: ${{ github.event.pull_request.head.sha }}
+    - uses: ruby/setup-ruby@v1
+      if: github.event.action != 'closed'
+    - shell: bash
+      if: github.event.action != 'closed'
+      run: bundle install
+    - name: Run Rubocop
+      shell: bash
+      if: github.event.action != 'closed'
+      continue-on-error: true
+      run: bundle exec rubocop --parallel --autocorrect
+    - name: Create PullRequest
+      uses: dev-hato/actions-diff-pr-management@v1.1.6
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        branch-name-prefix: apply-rubocop
+        pr-title-prefix: rubocopによる差分反映
+        pr-description-prefix: rubocopによって生成された差分を反映します。
