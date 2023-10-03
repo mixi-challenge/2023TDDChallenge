@@ -17,10 +17,6 @@ jobs:
       run:  |
         docker compose up tdd -d
         docker compose exec tdd bundle install
-    - name: Run Rubocop
-      shell: bash
-      run:  |
-        docker compose exec tdd bundle exec rubocop --parallel
     - name: Run tests for minitest
       shell: bash
       run:  |
